@@ -1,11 +1,13 @@
 const moment = require('moment');
 const chalk = require('chalk');
+const Table = require('cli-table');
 const { getEveningTime, getNormalTime, getOverTime } = require('./queries');
 const { eveningWage, normalWage, overTimeWage } = require('./wages');
 const { DAY } = require('./constants');
 
 const log = console.log;
-const text = chalk.yellow.bold;
+const header = chalk.yellow.bold;
+
 const store = {};
 
 // round a number
@@ -38,10 +40,9 @@ const processLine = (line) => {
   return store;
 };
 
-// calculate and display the wages
-const processResults = (store) => {
-  // place an empty line between prompt and the results
-  log('');
+const display = (store) => {
+  // create table and define headers
+  let table = new Table({ head: [ header('Name'), header('ID'), header('Salary'), header('Days'), header('Hours'), header('Minutes') ] });
 
   // calculate total wages and round them to max two decimals
   Object.keys(store).forEach((name) => {
@@ -57,10 +58,11 @@ const processResults = (store) => {
     const hours = round(minutes / 60, 2);
     const days = round(hours / 24, 1);
 
-    log(chalk.green(`${text(name)}\tearned ${text(salary)} dollars:`));
-    log(chalk.green(`\t\tworked ${text(days)} days ${text(hours)} hours ${text(minutes)} minutes`));
-    log('');
+    table.push([ name, store[name].id, `${salary} $`, `${days} d`, `${hours} h`, `${minutes} m` ]);
   });
+
+  log('');
+  log(table.toString());
 };
 
-module.exports = { processLine, processResults };
+module.exports = { display, processLine };

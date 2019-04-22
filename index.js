@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 const { open, reader } = require('./read');
-const { processLine, processResults } = require('./process');
+const { processLine, display } = require('./process');
 
 const log = console.log;
 
@@ -12,4 +12,4 @@ if(error) {
 }
 
 // read the file line by line and process the data
-reader(handle, processLine, processResults);
+reader(handle, processLine, display);
