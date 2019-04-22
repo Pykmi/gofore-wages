@@ -19,6 +19,10 @@ const getNormalTime = (start, end) => {
   const normal = moment.range(moment('06:00', 'HH:mm'), moment('19:00', 'HH:mm'));
   const range = moment.range(start, end);
 
+  if(!range.intersect(normal)) {
+    return 0;
+  }
+
   return range.intersect(normal).diff(MINUTES);
 };
 

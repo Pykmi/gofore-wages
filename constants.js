@@ -1,4 +1,4 @@
-// moment output types
+// time output types
 const DAY = 'day';
 const HOURS = 'hours';
 const MINUTES = 'minutes';
@@ -10,6 +10,10 @@ const LOW_OVERTIME_MULTIPLIER = 1.25;
 const MEDIUM_OVERTIME_MULTIPLIER = 1.5;
 const HIGH_OVERTIME_MULTIPLIER = 2;
 
+// reader line types
+const FIRST_LINE = 'FIRST_LINE';
+const DATA = 'DATA';
+
 module.exports = {
   DAY,
   HOURS,
@@ -18,5 +22,7 @@ module.exports = {
   EVENING_WAGE,
   LOW_OVERTIME_MULTIPLIER,
   MEDIUM_OVERTIME_MULTIPLIER,
-  HIGH_OVERTIME_MULTIPLIER
+  HIGH_OVERTIME_MULTIPLIER,
+  FIRST_LINE,
+  DATA
 };
