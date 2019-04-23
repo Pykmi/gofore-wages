@@ -8,7 +8,7 @@ const log = console.log;
 const err = chalk.red;
 
 const options = [
-  { name: 'file', alias: 'f', type: String, defaultValue: 'hour-list.cvs' },
+  { name: 'file', alias: 'f', type: String, defaultValue: 'hour-list.csv' },
   { name: 'help', alias: 'h', type: Boolean }
 ];
 

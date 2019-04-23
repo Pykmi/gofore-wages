@@ -3,7 +3,7 @@ const commandLineUsage = require('command-line-usage');
 const guide = [
   {
     header: 'Monthly Wage Calculation System',
-    content: 'Calculates monthly wages based on CVS files'
+    content: 'Calculates monthly wages based on CSV files'
   },
   {
     headers: 'Options',
@@ -11,7 +11,7 @@ const guide = [
       {
         name: 'file',
         typeLabel: '{underline file}',
-        description: 'CVS file containing employee time data.'
+        description: 'CSV file containing employee time data.'
       },
       {
         name: 'help',
