@@ -3,6 +3,7 @@
 Use the following commands to clone the repository and install dependencies.
 
 > *git clone https://github.com/Pykmi/gofore-wages.git*
+
 > *cd gofore-wages && npm install*  
 
 To display the usage guide, use this command.
